@@ -6,21 +6,19 @@ class Solution:
         # We will be using a O(n^2) time and O(1) space complexity
         
         left, right = 0, len(matrix) - 1
-        
         while left < right:
             for i in range(right - left):
                 top, bottom = left, right
-                #Move the topleft in temporary var
+                #save topleft in a temporary variable
                 topLeft = matrix[top][left + i]
-                #move bottom left to topleft
+                #save bottom left into top left
                 matrix[top][left + i] = matrix[bottom - i][left]
-                #Move bottom right to bottom left
+                #save bottom right into bottom left
                 matrix[bottom - i][left] = matrix[bottom][right - i]
-                #Move top right to bottom right
+                #save top right into bottom right
                 matrix[bottom][right - i] = matrix[top + i][right]
-                #Move topLeft to top right
+                #save the temp vartiable into top right
                 matrix[top + i][right] = topLeft
             right -= 1
             left += 1
-        
                 
