@@ -6,6 +6,7 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
+        #O(n) time and O(1) space complexity
         fast, slow = head, head
         while fast and fast.next:
             slow = slow.next
