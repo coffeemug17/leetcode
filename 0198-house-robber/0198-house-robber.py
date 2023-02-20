@@ -1,6 +1,6 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        # This is a dynamic programming problem
+        #[rob1, rob2, n, n+1,....]
         rob1, rob2 = 0, 0
         for num in nums:
             temp = max(rob1 + num, rob2)
