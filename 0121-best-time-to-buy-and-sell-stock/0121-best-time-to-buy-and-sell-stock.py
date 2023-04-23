@@ -1,10 +1,11 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        # O(n) time complexity and O(1) space complexity
-        maxProfit = 0
+        # We need to use the two pointers method
         left, right = 0, 1
+        maxProfit = 0
+        
         while (right < len(prices)):
-            if (prices[right] > prices[left]):
+            if prices[right] > prices[left]:
                 profit = prices[right] - prices[left]
                 maxProfit = max(profit, maxProfit)
             else:
